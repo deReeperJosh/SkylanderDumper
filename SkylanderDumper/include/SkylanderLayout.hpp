@@ -10,6 +10,7 @@ private:
   // Using ::Ref (of a Plutonium built-in object or any class having PU_SMART_CTOR) is an alias to a
   // shared_ptr of the instance.
   pu::ui::elm::TextBlock::Ref skylanderText;
+  pu::ui::elm::TextBlock::Ref fileText;
   pu::ui::elm::ProgressBar::Ref progressBar;
 
   Result ProcessSkylander();
