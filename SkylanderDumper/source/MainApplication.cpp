@@ -14,44 +14,45 @@ CustomLayout::CustomLayout() : Layout::Layout()
 
 NFCLayout::NFCLayout() : Layout::Layout()
 {
-  this->options_menu = pu::ui::elm::Menu::New(
-      0, 280, pu::ui::render::ScreenWidth, g_Settings.GetColorScheme().menu_base,
-      g_Settings.GetColorScheme().menu_base_focus,
-      g_Settings.json_settings.ui.value().menu_item_size.value(),
-      ComputeDefaultMenuItemCount(g_Settings.json_settings.ui.value().menu_item_size.value()));
-  g_Settings.ApplyToMenu(this->options_menu);
-  this->explore_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(277));
-  this->explore_menu_item->SetIcon(GetCommonIcon(CommonIconKind::SdCard));
-  this->explore_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->explore_menu_item->AddOnKey(std::bind(&MainMenuLayout::exploreMenu_DefaultKey, this));
-  this->app_list_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(488));
-  this->app_list_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Game));
-  this->app_list_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->app_list_menu_item->AddOnKey(std::bind(&MainMenuLayout::appList_DefaultKey, this));
-  this->tickets_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(4));
-  this->tickets_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Ticket));
-  this->tickets_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->tickets_menu_item->AddOnKey(std::bind(&MainMenuLayout::tickets_DefaultKey, this));
-  this->web_browser_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(5));
-  this->web_browser_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Browser));
-  this->web_browser_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->web_browser_menu_item->AddOnKey(std::bind(&MainMenuLayout::webBrowser_DefaultKey, this));
-  this->account_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(6));
-  this->account_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Accounts));
-  this->account_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->account_menu_item->AddOnKey(std::bind(&MainMenuLayout::account_DefaultKey, this));
-  this->amiibo_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(283));
-  this->amiibo_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Amiibo));
-  this->amiibo_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->amiibo_menu_item->AddOnKey(std::bind(&MainMenuLayout::amiibo_DefaultKey, this));
-  this->settings_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(375));
-  this->settings_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Settings));
-  this->settings_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->settings_menu_item->AddOnKey(std::bind(&MainMenuLayout::settings_DefaultKey, this));
-  this->about_menu_item = pu::ui::elm::MenuItem::New(cfg::Strings.GetString(8));
-  this->about_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Info));
-  this->about_menu_item->SetColor(g_Settings.GetColorScheme().text);
-//   this->about_menu_item->AddOnKey(std::bind(&MainMenuLayout::about_DefaultKey, this));
+  this->options_menu = pu::ui::elm::Menu::New(0, 280, pu::ui::render::ScreenWidth,
+                                              pu::ui::Color(0xCA, 0xFF, 0xFF, 0xFF),
+                                              pu::ui::Color(0xEA, 0xFB, 0xC2, 0xFF), 100, 8);
+  this->options_menu->SetScrollbarColor(pu::ui::Color(0xFF, 0xDA, 0x6C, 0xFF));
+  this->options_menu->SetMoveWaitTimeMs(100);
+  this->options_menu->SetItemAlphaIncrementSteps(5);
+  this->explore_menu_item = pu::ui::elm::MenuItem::New("One");
+  // this->explore_menu_item->SetIcon(GetCommonIcon(CommonIconKind::SdCard));
+  this->explore_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->explore_menu_item->AddOnKey(std::bind(&MainMenuLayout::exploreMenu_DefaultKey, this));
+  this->app_list_menu_item = pu::ui::elm::MenuItem::New("2");
+  // this->app_list_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Game));
+  this->app_list_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->app_list_menu_item->AddOnKey(std::bind(&MainMenuLayout::appList_DefaultKey, this));
+  this->tickets_menu_item = pu::ui::elm::MenuItem::New("3");
+  // this->tickets_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Ticket));
+  this->tickets_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->tickets_menu_item->AddOnKey(std::bind(&MainMenuLayout::tickets_DefaultKey, this));
+  this->web_browser_menu_item = pu::ui::elm::MenuItem::New("4");
+  // this->web_browser_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Browser));
+  this->web_browser_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->web_browser_menu_item->AddOnKey(std::bind(&MainMenuLayout::webBrowser_DefaultKey,
+  //   this));
+  this->account_menu_item = pu::ui::elm::MenuItem::New("5");
+  // this->account_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Accounts));
+  this->account_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->account_menu_item->AddOnKey(std::bind(&MainMenuLayout::account_DefaultKey, this));
+  this->amiibo_menu_item = pu::ui::elm::MenuItem::New("6");
+  // this->amiibo_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Amiibo));
+  this->amiibo_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->amiibo_menu_item->AddOnKey(std::bind(&MainMenuLayout::amiibo_DefaultKey, this));
+  this->settings_menu_item = pu::ui::elm::MenuItem::New("7");
+  // this->settings_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Settings));
+  this->settings_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->settings_menu_item->AddOnKey(std::bind(&MainMenuLayout::settings_DefaultKey, this));
+  this->about_menu_item = pu::ui::elm::MenuItem::New("8");
+  // this->about_menu_item->SetIcon(GetCommonIcon(CommonIconKind::Info));
+  this->about_menu_item->SetColor(pu::ui::Color(0x00, 0x00, 0x00, 0xFF));
+  //   this->about_menu_item->AddOnKey(std::bind(&MainMenuLayout::about_DefaultKey, this));
   this->options_menu->AddItem(this->explore_menu_item);
   this->options_menu->AddItem(this->app_list_menu_item);
   this->options_menu->AddItem(this->tickets_menu_item);
