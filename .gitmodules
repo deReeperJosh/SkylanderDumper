@@ -2,5 +2,5 @@
 	path = dependencies/Plutonium
 	url = https://github.com/XorTroll/Plutonium
 [submodule "Axologl"]
-	path = Axologl
+	path = dependencies/Axologl
 	url = https://github.com/ixalsera/Axologl
