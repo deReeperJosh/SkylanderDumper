@@ -3,11 +3,11 @@
 all: build
 
 build:
-	@$(MAKE) -C Plutonium/
+	@$(MAKE) -C dependencies/Plutonium/
 	@$(MAKE) -C SkylanderDumper/
 
 libclean:
-	@$(MAKE) -C Plutonium/ clean
+	@$(MAKE) -C dependencies/Plutonium/ clean
 	
 clean:
 	@$(MAKE) -C SkylanderDumper/ clean

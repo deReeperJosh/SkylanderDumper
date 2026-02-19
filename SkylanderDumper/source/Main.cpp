@@ -1,19 +1,23 @@
 #include <MainApplication.hpp>
-
-/*
+#include <axologl.h>
 
 // If you would like to initialize and finalize stuff before or after Plutonium, you can use libnx's
-userAppInit/userAppExit
+// userAppInit/userAppExit
 
-extern "C" void userAppInit() {
-    // Initialize stuff
+extern "C" void userAppInit()
+{
+  // Initialize stuff
+  consoleInit(NULL);
+  const axologl::AxologlOptions options;
+  axologl::configure(options);
+
+  axologl::debug("Axologl is great!")
 }
 
-extern "C" void userAppExit() {
-    // Cleanup/finalize stuff
+extern "C" void userAppExit()
+{
+  consoleExit(NULL);
 }
-
-*/
 
 int main()
 {

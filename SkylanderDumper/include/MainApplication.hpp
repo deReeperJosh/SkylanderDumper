@@ -44,7 +44,7 @@ class MainApplication : public pu::ui::Application
 {
 private:
   // Layout instance
-  CustomLayout::Ref layout;
+  NFCLayout::Ref layout;
 
 public:
   using Application::Application;
