@@ -1,7 +1,15 @@
 #include <MainApplication.hpp>
 
+MainApplication::Ref g_MainApplication = nullptr;
+
 int main()
 {
+  Result rc = nfcMfInitialize();
+  if (R_FAILED(rc))
+  {
+    diagAbortWithResult(rc);
+  }
+
   // First create our renderer, where one can customize SDL2 or other stuff's initialization
   auto renderer_opts = pu::ui::render::RendererInitOptions(SDL_INIT_EVERYTHING,
                                                            pu::ui::render::RendererHardwareFlags);
@@ -21,10 +29,10 @@ int main()
   auto renderer = pu::ui::render::Renderer::New(renderer_opts);
 
   // Create our main application from the renderer
-  auto main = MainApplication::New(renderer);
+  g_MainApplication = MainApplication::New(renderer);
 
   // Load the application. This MUST be called or Show() will exit and nothing will be rendered
-  const auto rc = main->Load();
+  rc = g_MainApplication->Load();
   if (R_FAILED(rc))
   {
     diagAbortWithResult(rc);
@@ -33,9 +41,10 @@ int main()
   // Show: start rendering in an "infinite" loop
   // If wou would like to show with a "fade in" from black-screen to the UI, use instead
   // ShowWithFadeIn();
-  main->Show();
+  g_MainApplication->ShowWithFadeIn();
 
   // Plutonium will handle all disposing of UI and renderer/application when Close is called
 
+  nfcMfExit();
   return 0;
 }
