@@ -41,7 +41,7 @@ TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data
-INCLUDES	:=	include dependencies/Axologl/include
+INCLUDES	:=	include
 #ROMFS		:=	romfs
 
 #---------------------------------------------------------------------------------
