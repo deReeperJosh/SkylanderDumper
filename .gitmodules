@@ -1,6 +1,6 @@
 [submodule "Plutonium"]
-	path = dependencies/Plutonium
+	path = Plutonium
 	url = https://github.com/XorTroll/Plutonium
 [submodule "Axologl"]
-	path = dependencies/Axologl
+	path = Axologl
 	url = https://github.com/ixalsera/Axologl
