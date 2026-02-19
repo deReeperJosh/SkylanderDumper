@@ -495,7 +495,8 @@ SkylanderLayout::SkylanderLayout() : Layout::Layout()
   // Create the TextBlock instance with the text we want
   this->skylanderText = pu::ui::elm::TextBlock::New(300, 300, "Press x to Scan a Skylander");
   this->fileText = pu::ui::elm::TextBlock::New(300, 400, "");
-  this->progressBar = pu::ui::elm::ProgressBar::New(20, 500, pu::ui::render::ScreenWidth - 40, 50, 16);
+  this->progressBar =
+      pu::ui::elm::ProgressBar::New(20, 500, pu::ui::render::ScreenWidth - 40, 50, 16);
   // Add the instance to the layout. IMPORTANT! this MUST be done for them to be used, having them
   // as members is not enough (just a simple way to keep them)
   this->Add(this->skylanderText);
@@ -776,6 +777,10 @@ Result SkylanderLayout::ProcessSkylander()
         {
           //   PrintHex(response[j].data, sizeof(response[j].data));
           memcpy(&skylander_data[i * 0x40 + j * 0x10], response[j].data, sizeof(response[j].data));
+          if ((j + 1) % 4 == 0)
+          {
+            memcpy(&skylander_data[i * 0x40 + j * 0x10], params[j].sector_key.sector_key, sizeof(params[j].sector_key.sector_key));
+          }
         }
       }
     }
