@@ -12,7 +12,7 @@ NFCLayout::NFCLayout() : Layout::Layout()
   this->helloText = pu::ui::elm::TextBlock::New(300, 300, "Press x to Scan a Skylander");
   this->menu =
       pu::ui::elm::Menu::New(0, 0, pu::ui::render::ScreenWidth, pu::ui::Color(254, 251, 255, 255),
-                             pu::ui::Color(111, 190, 232, 255), 50, 3);
+                             pu::ui::Color(111, 190, 232, 255), 100, 3);
   this->skylander_menu_item = pu::ui::elm::MenuItem::New("Dump a Skylander Figure");
   this->skylander_menu_item->AddOnKey(std::bind(&NFCLayout::DumpSkylanderFigure, this));
   this->infinity_menu_item = pu::ui::elm::MenuItem::New("Dump an Infinity Figure");
