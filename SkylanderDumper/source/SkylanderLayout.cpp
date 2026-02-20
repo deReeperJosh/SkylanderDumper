@@ -493,7 +493,7 @@ const std::map<const std::pair<const u16, const u16>, const char*> s_listSkyland
 SkylanderLayout::SkylanderLayout() : Layout::Layout()
 {
   // Create the TextBlock instance with the text we want
-  this->skylanderText = pu::ui::elm::TextBlock::New(300, 300, "Press x to Scan a Skylander");
+  this->skylanderText = pu::ui::elm::TextBlock::New(300, 300, "Press X to Scan a Skylander");
   this->fileText = pu::ui::elm::TextBlock::New(300, 400, "");
   this->progressBar =
       pu::ui::elm::ProgressBar::New(20, 500, pu::ui::render::ScreenWidth - 40, 50, 16);
@@ -517,7 +517,7 @@ SkylanderLayout::SkylanderLayout() : Layout::Layout()
       if (R_SUCCEEDED(rc))
       {
         this->progressBar->SetProgress(0);
-        this->skylanderText->SetText("Press x to Scan a Skylander");
+        this->skylanderText->SetText("Press X to Scan a Skylander");
         this->fileText->SetText("");
       }
     }
@@ -525,7 +525,7 @@ SkylanderLayout::SkylanderLayout() : Layout::Layout()
     {
       g_MainApplication->LoadLayout(g_MainApplication->GetMainLayout());
       this->progressBar->SetProgress(0);
-      this->skylanderText->SetText("Press x to Scan a Skylander");
+      this->skylanderText->SetText("Press X to Scan a Skylander");
       this->fileText->SetText("");
     }
   });

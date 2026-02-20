@@ -35,6 +35,7 @@ void NFCLayout::DumpSkylanderFigure()
 
 void NFCLayout::DumpInfinityFigure()
 {
+    g_MainApplication->LoadLayout(g_MainApplication->GetInfinityLayout());
 }
 
 void NFCLayout::DumpDimensionsFigure()

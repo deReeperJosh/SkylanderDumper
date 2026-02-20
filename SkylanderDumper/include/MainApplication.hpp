@@ -4,6 +4,7 @@
 // Include Plutonium's main header
 #include <pu/Plutonium>
 
+#include <InfinityLayout.hpp>
 #include <NFCLayout.hpp>
 #include <SkylanderLayout.hpp>
 
@@ -14,6 +15,7 @@ private:
   // Layout instance
   NFCLayout::Ref mainLayout;
   SkylanderLayout::Ref skylanderLayout;
+  InfinityLayout::Ref infinityLayout;
 
 public:
   using Application::Application;
@@ -24,4 +26,5 @@ public:
 
   inline NFCLayout::Ref& GetMainLayout() { return this->mainLayout; }
   inline SkylanderLayout::Ref& GetSkylanderLayout() { return this->skylanderLayout; }
+  inline InfinityLayout::Ref& GetInfinityLayout() { return this->infinityLayout; }
 };

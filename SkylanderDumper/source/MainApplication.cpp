@@ -7,6 +7,7 @@ void MainApplication::OnLoad()
   // Create the layout (calling the smart constructor above)
   this->mainLayout = NFCLayout::New();
   this->skylanderLayout = SkylanderLayout::New();
+  this->infinityLayout = InfinityLayout::New();
 
   // Load the layout. In applications layouts are loaded, not added into a container (you don't
   // select an added layout, just load it from this function) Simply explained: loading layout = the
